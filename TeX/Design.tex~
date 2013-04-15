@@ -1,0 +1,20 @@
+\section{Design}
+\label{Design}
+%section on all the design details
+
+\subsection{Noise in  Switched Capacitor Integrator}
+\label{Design:noise}
+%estimating the capacitor sizes for different OSRs
+%use this to compare designs
+
+\subsection{Modulator Choice}
+%based on the different combinations of bits, order and OSR that could meet the required specification
+
+%reference the textbook, show the graphs and list the different options tested in matlab
+
+%but then have to choose between single stage and multiple stage designs
+
+
+%so will need to compare the single stage designs here to some multi-stage designs
+
+
