@@ -1,0 +1,19 @@
+\begin{table}
+    \begin{center}
+    \caption{A table summarising the required capacitor sizes and amplifier $g_{m}$s for different OSRs.}
+    \label{tab:capsizes}
+    \begin{tabular}{l l p{0.3\textwidth}} 
+    \toprule
+    OSR & Required Capacitor Size (F) & Required Amplifier $g_{m}$ (S) \\ 
+    \midrule
+    2   &  8.855\e{-11}  & 2.305\e{-4} 
+    4   &  4.427\e{-11}  & 2.305\e{-4} 
+    8   &  2.214\e{-11}  & 2.305\e{-4} 
+    16  &  1.107\e{-11}  & 2.305\e{-4} 
+    32  &  5.534\e{-12}  & 2.305\e{-4} 
+    64  &  2.767\e{-12}  & 2.305\e{-4} 
+    128 &  1.384\e{-12}  & 2.305\e{-4} 
+    256 &  6.918\e{-13}  & 2.305\e{-4} 
+    \end{tabular}
+    \end{center}
+\end{table}

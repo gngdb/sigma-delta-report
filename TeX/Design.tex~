@@ -1,20 +1,156 @@
 \section{Design}
 \label{Design}
 %section on all the design details
+The specifications for this Sigma-Delta modulator to meet are shown in table \ref{tab:SDspec}.
+These specifications are a relatively low signal bandwidth and a very high SNDR that is characteristic of an audio band ADC.
+In this section different options are evaluated and chosen from to meet these specifications.
 
-\subsection{Noise in  Switched Capacitor Integrator}
+\input{SDspec}
+
+\subsection{Noise in  Switched Capacitor Integrators}
 \label{Design:noise}
 %estimating the capacitor sizes for different OSRs
 %use this to compare designs
+For any size of modulator the noise will be dominated by the first integrator at the input\cite{lecturenotes}.
+Shown in table \ref{tab:capsizes} are the required input capacitor sizings for different OSRs and for a presumed SNDR of 106dB for a small margin on the specifications
+Also shown in table \ref{tab:capsizes} are the required $g_{m}$s of the amplifiers in the first integrator for these capacitor sizes and settling errors required.
+
+The capacitor sizes are found by equating the expected quantisation noise for a 123dB SNDR with the expected kT/C noise on the capacitor:
+%example calculation
+\begin{align}
+    \frac{m k T}{C OSR} = N_{q}^{2} = \frac{V_{inRMS}^{2}}{10^{\frac{SNDR}{10}}} = \frac{1.8^{2}}{10^{\frac{106}{10}}} = 8.14\e{-11} \\
+    C = \frac{m k T}{OSR N_{q}^{2}} = \frac{4 \times 1.23\e{-23} \times 293}{OSR \times 8.14\e{-11}} 
+\end{align}
+%explain symbols here
+Where $V_{inRMS}$ is the RMS differential voltage range,
+%ETC
+%assume linear settling for the g_m
+To find the required g_{m}, linear settling is assumed, and the settling time is dependent on OSR:
+\begin{align}
+    \tau_{settling} = \frac{256\times T_{clk}}{2\times OSR}
+\end{align}
+Where $\tau_{settling}$ is the settling time.
+To settle to within $\sqrt{8.14\e{-11}} = 9.02\e{-6} V_{RMS}$ over the $1.8 V_{RMS}$ range of the circuit:
+\begin{align}
+    e^{\frac{-\tau_{settling} g_{m}}{C}} = \frac{9.02\e{-6}}{1.8} \\
+    g_{m}  = - \frac{C \times \ln{\frac{9.02\e{-6}}{1.8}}}{\tau_{settling}}
+\end{align}
+
+\input{capsizes}
+
+Neglecting second order effects it appears that there is no downside to choosing a high OSR in the design of a Sigma-Delta modulator.
+Effects such as slew rate and switch delays will affect these problems, however.
+Without more complex simulation analysis it is difficult to quantify these other effects and it can only be said that these effects will exist.
+Therefore, a high OSR is recommended for this design.
 
 \subsection{Modulator Choice}
 %based on the different combinations of bits, order and OSR that could meet the required specification
+Shown in table \ref{tab:modoptions} are the major possible options that are projected based on graphs by Schreier and Temes\cit{textbook} and lecture notes.
+This list is also limited to the options that are possible using the provided tools.
 
-%reference the textbook, show the graphs and list the different options tested in matlab
+\input{modoptions}
 
-%but then have to choose between single stage and multiple stage designs
+This list is reduced in that many of the CIFB designs are impossible to realise due to time constraints - they would require learning how to edit Simulink designs to add different quantisers and additional modulator stages.
+Initial attempts to edit Simulink designs were unsuccessful, therefore limiting the possibilities to third order designs with different OSRs.
+
+%discussion of MASH converter designs
+It was possible to use MASH converter designs existing to meet the specifications with a lower OSR than would be required by a CIFB design.
+Unfortunately it has been shown in section \ref{Design:noise} that this is not a first order concern - in fact, it's recommended to pick the highest possible OSR.
+A problem with MASH converter designs anticipated would be noise leakage\cite{textbook} - due to mismatches in the transfer functions of the different stages.
+
+An additional problem with a MASH converter design is that simulations showed it would not have a flat audio band noise profile.
+This can be seen in figure \ref{fig:MASH} and can be compared with figure \ref{fig:cifbnominal}.
+
+\begin{figure}
+    \begin{center}
+    \includegraphics[width=0.8\textwidth]{MASH}
+    \label{fig:MASH}
+    \caption{An example of a possible nominal MASH SNDR profile with a sine wave input.}
+    \end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+    \includegraphics[width=0.8\textwidth]{cifbnominal}
+    \label{fig:cifbnominal}
+    \caption{An example of a possible nominal MASH SNDR profile with a sine wave input.}
+    \end{center}
+\end{figure}
+
+%need an argument against multi-bit feedback
+%read textbook for this
+
+%state choice and the reasons for the choice
+Originally, a 3rd order CIFB design with an OSR of 256 was chosen as the design as it was able to meet the flat audio band noise profile requirement thanks to its optimised NTF.
+Other advantages include it's simplicity with single-bit feedback and the anticipation of efficiency with the optimised transfer function.
+Unfortunately, this design proved impossible due to stability and requirements for modification in Simulink that were unsuccessful.
+
+The second choice was a MASH 2+1 converter with an OSR of 128.
+Problems outlined above have been considered in the verification of the design in section \ref{Verification}.
+
+%cannot run many of the possible designs
+%leave space here in case it becomes possible tomorrow
+%in lieu of that, just write here that third order cifb3 was chosen because it was possible to create it
+
+\subsection{Schematic}
+\label{Design:schematic}
+%top level diagram and some schematics showing how the sub-blocks should be implemented
+The top level functional diagram of a two stage 2+1 MASH modulator is shown in figure \ref{fig:MASH}.
+This design comprises several standard blocks that can be further broken down into their circuit implementations.
+
+%top level schematic
+%screencap from matlab
+\begin{figure}
+    \begin{center}
+    \includegraphics[width=0.8\textwidth]{MASH.png}
+    \label{fig:MASH}
+    \caption{Top level functional block diagram of the MASH modulator chosen in this design.}
+    \end{center}
+\end{figure}
+
+%integrator design
+    \subsubsection{Differential Integrator}
+    %image and description of a differential integrator
+
+%how to implement gain elements, coefficients, etc
 
 
-%so will need to compare the single stage designs here to some multi-stage designs
+    \subsection{Component Sizing}
+    \label{Design:components}
+    %sizing of the capacitors and switches calculations
+    The components in the first integrator are assumed to contribute the vast majority of the noise in the design.
+    Due to this, only the switches and capacitors in this part of the design are considered in terms of their noise contribution.
+    The required capacitor size for a 256 OSR and noise expectation comparable to an SQNR of 106dB is shown in table \ref{tab:capsizes}.
+
+    The switches in the design must also be sized - similarly to the expected $g_{m}$ required for settling.
+    Effective resistance of the switches must be designed in order that the voltage settles to within the required accuracy:   
+
+    %take equation from above, then sub in R_on
+    \begin{align}
+        R_{switch}  = -\frac{\tau_{settling}}{C \ln{\frac{9.02\e{-6}}{1.8}}}
+    \end{align}
+
+    This evaluates to an effective switch resistance of $4819.59\Omega$.
+
+    The required $g_{m}$ of the amplifier contributes to the required sizing of the input devices for the amplifier - along with estimations of bias currents required.
+    An approximate minimum bias current can be estimated by the current required to slew the entire signal range in half a settling period.
+    
+    \begin{align}
+        I = \frac{dV}{dt}C = \frac{2\times 1.8}{4.069\e{-8}}(6.918\e{-13}) = 6.121\e{-5} A
+    \end{align}
+    
+    A bias current of approximately $100\mu A$ is therefore recommended in the input amplifier.
+    Assuming an AMS process it is therefore possible to size the input devices for the settling requirements.
+    
+    \begin{align}
+        g_{m} = \sqrt{\frac{2K'_{p} W |I_{D}|}{L}} \\
+        \frac{W}{L} = \frac{g_{m}^{2}}{2K'_{p} |I_{D}|} = \frac{(2.305\e{-4})^{2}}{2(14\e{-6})(100\e{-6})} = 18.975
+    \end{align}
+    Where $K'_{p} = 14\mu A/V^{2}$ - assuming PMOS input devices for lower noise performance.
+    Requirements for wider devices due to slewing or gain requirements could change this estimation, but it provides a lower bound.
+
+\subsection{Conclusion}
+\label{Design:conclusion}
+%conclusion, write this at the end
 
 

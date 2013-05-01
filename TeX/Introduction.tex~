@@ -1,0 +1,15 @@
+\section{Introduction}
+%just a couple of paragraphs introducing the report
+This report details the design a Sigma-Delta modulator in a design exercise.
+The specifications of this modulator are described in section \ref{Design}.
+Full simulation of the design in macro-model in Cadence was not completed due to time constraints but no problems are anticipated.
+
+%
+Time constraints were aggravated due to experimentation with a CIFB design that required extensive modification in Simulink to be succesfully verified.
+Unfortunately, there were many bugs encountered due to inexperience editing Simulink models.
+Finally, this design was abandoned in favour of a more established design that could meet the specifications.
+
+A 2+1 MASH converter was chosen with an OSR of 128 to give adequate margin on the specifications.
+It is shown that this is a robust design that is capable of meeting the specifications.
+%THEN SAY UNFORTUNATELY IT WAS NOT FEASIBLE TO IMPLEMENT A DESIGN THIS COMPLEX IN CADENCE IN THE TIME AVAILABLE
+

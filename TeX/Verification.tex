@@ -1,0 +1,134 @@
+\section{Verification}
+\label{Verification}
+%section including all the simulation results created
+
+    \subsection{DC Stability}
+    \label{Verification:DCstab}
+    %tests showing DC stability with different problems
+    Tones at the output of a modulator will degrade the SQNR performance of a circuit during normal operation.
+    Also, the effects of DC inputs on the stability of the loop must also be investigated to find the input range of the modulator over which it is stable. 
+    The effect on output DC response from an input DC sweep due to finite amplifier gain is another important factor.
+
+    Shown in figure \ref{fig:tranexample} is the transient output at various points in the modulator.
+    It can be seen to be stable for the DC input voltage being applied at %some number of V
+
+    %should have a plot of just the transient voltages at different points in the circuit for high input voltages to show nothing is becoming linear
+    %GET RID OF THIS IF ITS DIFFICULT TO SOURCE THE WAVE
+    \begin{figure}
+        \begin{center}
+        \includegraphics[width=0.8\textwidth]{tranexample}
+        \label{fig:tranexample}
+        \caption{An example transient output waveform.}
+        \end{center}
+    \end{figure}
+
+
+        \subsubsection{DC input voltage - DC output voltage}
+        \label{Verification:DCinputoutput}
+        %point out how this design's dead zone performance is better than for other designs
+        %so it can be implemented using amplifiers with lower gain
+        The effect of finite gain amplifiers on a design can be to cause ``dead zones'' to appear in the transfer function of DC input to DC output.
+        This design is expected to be resistant to this effect as it is effectively a third order design and the width of the dead zone can be described: 
+
+        %equations describing the dead zone of a third order modulator
+        \begin{align}
+            
+        \end{align}
+
+        %there is no spec for this so could just drive it down very low
+        The results of this design to this test are shown in figure \ref{fig:dcdc}.
+        No dead zones are visible at any zoom level - the dead zones produced are smaller than the resolution of the sweep.
+
+        \begin{figure}
+            \begin{center}
+            \includegraphics[width=0.8\textwidth]{dcdc.png}
+            \label{fig:dcdc}
+            \caption{DC input voltage to DC output voltage for a finite gain of ...} %FILL IN THE GAIN HERE
+            \end{center}
+        \end{figure}       
+
+        \subsection{DC input voltage - baseband power}
+        \label{Verification:DCbbpwr}
+        %
+        A sweep of DC input voltages while monitoring the baseband power will detect tones appearing at those input voltages.
+        The result of this test is shown in figure \ref{fig:dcdcbbpwr}.
+        This was run with saturation limits in both integrators equal to 2.546V, to reflect the signal range required of the real circuits.
+
+         \begin{figure}
+            \begin{center}
+            \includegraphics[width=0.8\textwidth]{dcdcbbpwr}
+            \label{fig:dcdcbbpwr}
+            \caption{Nominal baseband power resulting from a sweep of DC inputs.}
+            \end{center}
+        \end{figure}       
+        
+        %this might result in requiring dither
+        The baseband power never exceeds -103dB, so it can be expected that the circuit is well within specification.
+
+        %investigate the effect of mismatch?
+
+%    \subsection{Flat Noise Profile}
+%    %using dither to make the noise profile flat
+%    The noise profile of the chosen design without dither can be seen in figure \ref{fig:MASH}.
+%    It does not meet the specifications in that it is not flat.
+%    This is a problem that can be solved by applying dither to the circuit in the form of adding random noise at 
+%
+%    \begin{figure}
+%        \begin{center}
+%        \includegraphics[width=0.8\textwidth]{SQNRdither}
+%        \label{fig:SQNRdither}
+%        \caption{Single simulation showing the effect of dither on the noise floor of the modulator.}
+%        \end{center}
+%    \end{figure}  
+%
+%    Dither is therefore applied in all SQNR simulations involving this modulator.
+
+    \subsection{SQNR Stability}
+    %sweeps of SQNR
+    To verify the performance of a Sigma-Delta modulator it's necessary to verify the resolution of the circuit at many input amplitudes and in cases involving non-ideal components.
+    The cases tested here are:
+    \begin{itemize}
+        \item Capacitor mismatch
+        \item Finite gain
+        \item Stage mismatch
+        \item Finite signal swing
+    \end{itemize}
+
+    Without mismatch, but with a finite gain of 1000 and a finite signal swing equal to that expected in the amplifier of 2.546V differential, the results of a sweep of input sine amplitudes is shown in figure \ref{fig:SQNRnominal}.
+
+    \begin{figure}
+        \begin{center}
+        \includegraphics[width=0.8\textwidth]{SQNRnominal}
+        \label{fig:SQNRnominal}
+        \caption{SQNR resulting from a sweep of different input amplitudes of a sine wave without mismatch is shown.}
+        \end{center}
+    \end{figure}  
+
+
+
+        \subsubsection{Capacitor Mismatch}
+        %capacitor mismatch, the effect of
+        Capacitor mismatch causes a mismatch in the multiplication stages of the amplifier.
+        In the matlab model there are various precise multiplication elements that can be varied.
+        The variation expected in capacitors is 0.4\%, so a variation in these values of 0.4\% must be tested.
+ 
+        \begin{figure}
+            \begin{center}
+            \includegraphics[width=0.8\textwidth]{SQNRnominal}
+            \label{fig:SQNRcap}
+            \caption{SQNR resulting from a sweep of different input amplitudes of a sine wave with capacitor mismatch is shown.}
+            \end{center}
+        \end{figure}             
+
+        \subsubsection{Effect of Transfer Function Mismatch} 
+        %run SQNR sweeps with mismatches in the transfer function
+        %reference equations describing this from the textbook
+        
+
+    \subsection{Cadence Tests}
+    %test showing that the sizing of switches and caps is ok
+
+\subsection{Conclusion}
+\label{Verification:conclusion}
+%conclusion to the verification section
+

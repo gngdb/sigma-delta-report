@@ -1,0 +1,23 @@
+%list all the optimised cifb designs
+%and MASH options
+%and silva-steensgard
+%and multiple bit quantiser designs
+\begin{table}
+    \begin{center}
+    \caption{A table summarising design options evaluated during the design.}
+    \label{tab:modoptions}
+    \begin{tabular}{l l l p{0.2\textwidth}}
+    \toprule
+    Architecture  & Order &   OSR     & Peak Nominal Observed SNDR(dB) & Notes \\
+    \midrule
+    CIFB & 3     & 128 & 109.0 & Margin on specifications not high enough. \\
+    CIFB & 3     & 256 & 128.1 & \\
+    MASH & 2+1   & 128 & 126.8 & Stable, established design. \\
+    MASH & 1+1+1 & 128 & 126.9 & Error correcting abilities less effective than 2+1 design. \\
+    %Silva-Steensgaard & 2 &  does not meet spec without multi-bit feedback
+    %multi-bits go here
+    
+
+    \end{tabular}
+    \end{center}
+\end{table}
