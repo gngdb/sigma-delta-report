@@ -11,11 +11,10 @@ In this section different options are evaluated and chosen from to meet these sp
 \label{Design:noise}
 %estimating the capacitor sizes for different OSRs
 %use this to compare designs
-For any size of modulator the noise will be dominated by the first integrator at the input\cite{Henderson2013}.
-Shown in table \ref{tab:capsizes} are the required input capacitor sizings for different OSRs and for a presumed SNDR of 106dB for a small margin on the specifications.
+For any size of modulator the noise will be dominated by the first integrator at the input\cite{lecturenotes}.
+Shown in table \ref{tab:capsizes} are the required input capacitor sizings for different OSRs and for a presumed SNDR of 106dB for a small margin on the specifications
 Also shown in table \ref{tab:capsizes} are the required $g_{m}$s of the amplifiers in the first integrator for these capacitor sizes and settling errors required.
 
-Quantisation noise is intended to be a very small part of the noise budget(\cite{Steensgaard2004}, p.437) - making the initial SNDR target 123dB.
 The capacitor sizes are found by equating the expected quantisation noise for a 123dB SNDR with the expected kT/C noise on the capacitor:
 %example calculation
 \begin{align}
@@ -23,8 +22,8 @@ The capacitor sizes are found by equating the expected quantisation noise for a 
     C = \frac{m k T}{OSR N_{q}^{2}} = \frac{4 \times 1.23\e{-23} \times 293}{OSR \times 8.14\e{-11}} 
 \end{align}
 %explain symbols here
-Where $V_{inRMS}$ is the RMS differential voltage range and $m=4$ for a differential circuit.
-
+Where $V_{inRMS}$ is the RMS differential voltage range,
+%ETC
 %assume linear settling for the g_m
 To find the required g_{m}, linear settling is assumed, and the settling time is dependent on OSR:
 \begin{align}
@@ -57,22 +56,22 @@ Initial attempts to edit Simulink designs were unsuccessful, therefore limiting 
 %discussion of MASH converter designs
 It was possible to use MASH converter designs existing to meet the specifications with a lower OSR than would be required by a CIFB design.
 Unfortunately it has been shown in section \ref{Design:noise} that this is not a first order concern - in fact, it's recommended to pick the highest possible OSR.
-A problem with MASH converter designs anticipated would be noise leakage(\cite{Schreier2004}, p.132) - due to mismatches in the transfer functions of the different stages.
+A problem with MASH converter designs anticipated would be noise leakage\cite{textbook} - due to mismatches in the transfer functions of the different stages.
 
-An additional problem with a MASH converter design is that simulations showed it would not have a completely flat audio band noise profile.
-This can be seen in figure \ref{fig:MASHnominal} and can be compared with figure \ref{fig:cifbnominal}.
+An additional problem with a MASH converter design is that simulations showed it would not have a flat audio band noise profile.
+This can be seen in figure \ref{fig:MASH} and can be compared with figure \ref{fig:cifbnominal}.
 
 \begin{figure}
     \begin{center}
-    \includegraphics[width=0.8\textwidth]{MASHnominal.png}
-    \label{fig:MASHnominal}
+    \includegraphics[width=0.8\textwidth]{MASH}
+    \label{fig:MASH}
     \caption{An example of a possible nominal MASH SNDR profile with a sine wave input.}
     \end{center}
 \end{figure}
 
 \begin{figure}
     \begin{center}
-    \includegraphics[width=0.8\textwidth]{cifbnominal.png}
+    \includegraphics[width=0.8\textwidth]{cifbnominal}
     \label{fig:cifbnominal}
     \caption{An example of a possible nominal MASH SNDR profile with a sine wave input.}
     \end{center}
@@ -88,6 +87,10 @@ Unfortunately, this design proved impossible due to stability and requirements f
 
 The second choice was a MASH 2+1 converter with an OSR of 128.
 Problems outlined above have been considered in the verification of the design in section \ref{Verification}.
+
+%cannot run many of the possible designs
+%leave space here in case it becomes possible tomorrow
+%in lieu of that, just write here that third order cifb3 was chosen because it was possible to create it
 
     \subsection{Schematic}
     \label{Design:schematic}
@@ -105,59 +108,29 @@ Problems outlined above have been considered in the verification of the design i
         \end{center}
     \end{figure}
 
-        \subsubsection{Silva-Steensgaard Modulator}
-        %the second order modulator
-        The first stage in this design is a second order modulator in a configuration known as a Silva-Steensgaard modulator.
-        A differential circuit implementation of this circuit is shown in figure \ref{fig:silvaschematic}.
-
-        \begin{figure}
-            \begin{center}
-            \includegraphics[height=0.8\textheight, angle=90]{silvaschematic.png}
-            \label{fig:silvaschematic}
-            \caption{A differential implementation on the Silva-Steensgaard modulator.}
-            \end{center}
-        \end{figure}
-
-        %how to implement gain elements, coefficients, etc
-        The gain elements and summing elements in this part of the design are implemented using capacitors.
-        A differential multi-bit ADC and DAC must be implemented for this design to be created.
-        A flash ADC implements the 2-bit ADC and an example circuit seen in figure \ref{fig:multiDAC} could be used to create the reference voltages if applied differentially.
-
-        \begin{figure}
-            \begin{center}
-            \includegraphics[width=0.8\textwidth]{multiDAC.png}
-            \label{fig:multiDAC}
-            \caption{A multi-bit DAC switched capacitor implementation\cite{Henderson2013a}.}
-            \end{center}
-        \end{figure}       
-
-        %integrator design
-        \subsubsection{First Order Modulator}
+    %integrator design
+        \subsubsection{Differential Integrator}
         %image and description of a differential integrator
-        An example schematic for the first order modulator involved in this design is shown in figure \ref{fig:diffint}.
-        This is the second modulator in the design and is a standard differential modulator design.
+        
 
         %image should cite the lecture notes
         \begin{figure}
             \begin{center}
             \includegraphics[width=0.8\textwidth]{diffint.png}
             \label{fig:diffint}
-            \caption{A differential implementation of a first order modulator\cite{Henderson2013a}.}
+            \caption{An example schematic of a differential integrator\cite{lecturenotes}.}
             \end{center}
         \end{figure}
 
+        %how to implement gain elements, coefficients, etc
+
+        %show the summing function, how it's done with capacitors and switches
+
+        \subsection{Latched Comparator}
         %for the 1 bit quantiser
-        A latched comparator is required to implement the single bit quantiser in the design.
-        Designing this is a transistor level piece of design, and was not included in the design of the circuit.
 
-        \subsubsection{Digital Signal Processing}
-        %the filters, gain and digital summing elements
-        The final signal processing in this modulator design is performed in the digital domain.
-        A three cycle delay element, two gain operations and a summing element must be implemented in the digital design.
-        This will also have to be combined with a digital filter after quantising prior to mixing.
-
-        Without any of these components in the library available to the design at this point the implementation in Cadence could not be completed.
-        It will be demonstrated that this design will be successful upon completion.
+        \subsection{Flash ADC}
+        %for the 2 bit quantiser
 
     \subsection{Component Sizing}
     \label{Design:components}
@@ -193,15 +166,8 @@ Problems outlined above have been considered in the verification of the design i
     Where $K'_{p} = 14\mu A/V^{2}$ - assuming PMOS input devices for lower noise performance.
     Requirements for wider devices due to slewing or gain requirements could change this estimation, but it provides a lower bound.
 
-    %remaining components, by estimating the noise factor of the amplifier
-    The remaining components - switches and capacitors in the design - will all be sized smaller than those at the input as the input referred effect of these components will be negligible.
-    Schreier \& Temes estimate the influence of capacitors in further stages to be approximately 0.01\%(\cite{Steensgaard2004}, p.441) of the input capacitor's contribution.
-    From this, it can be estimated that capacitors of 20fF would be a safe value, and this would ease settling requirements in the circuit - switches could be up to 50 times more resistive, and therefore 50 times less wide.
-
 \subsection{Conclusion}
 \label{Design:conclusion}
 %conclusion, write this at the end
-The design of this circuit was mainly a process of choosing a modulator architecture and OSR.
-Initial choices failed in simulation, forcing the choice of a dependable architecture.
-A 2+1 MASH converter with an OSR of 128 was chosen and the sizes of the various components were estimated.
+
 

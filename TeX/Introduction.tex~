@@ -12,4 +12,4 @@ Finally, this design was abandoned in favour of a more established design that c
 A 2+1 MASH converter was chosen with an OSR of 128 to give adequate margin on the specifications.
 It is shown that this is a robust design that is capable of meeting the specifications.
 %THEN SAY UNFORTUNATELY IT WAS NOT FEASIBLE TO IMPLEMENT A DESIGN THIS COMPLEX IN CADENCE IN THE TIME AVAILABLE
-
+% finish by saying this isn't a problem as the noise is shown to be low enough thanks to the capacitor selection

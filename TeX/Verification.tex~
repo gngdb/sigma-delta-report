@@ -28,16 +28,12 @@
         %point out how this design's dead zone performance is better than for other designs
         %so it can be implemented using amplifiers with lower gain
         The effect of finite gain amplifiers on a design can be to cause ``dead zones'' to appear in the transfer function of DC input to DC output.
-        This design is expected to be resistant to this effect as it is effectively a third order design and the width of the dead zone can be described: 
-
-        %equations describing the dead zone of a third order modulator
-        \begin{align}
-            
-        \end{align}
+        This design is expected to be resistant to this effect as it is effectively a third order design and the width of the dead zone can be expected to be proportional to $\frac{1}{A^{3}}$.
 
         %there is no spec for this so could just drive it down very low
         The results of this design to this test are shown in figure \ref{fig:dcdc}.
         No dead zones are visible at any zoom level - the dead zones produced are smaller than the resolution of the sweep.
+        This suggests it is likely the non-linearity will not affect the design.
 
         \begin{figure}
             \begin{center}
@@ -56,7 +52,7 @@
 
          \begin{figure}
             \begin{center}
-            \includegraphics[width=0.8\textwidth]{dcdcbbpwr}
+            \includegraphics[width=0.8\textwidth]{dcdcbbpwrsweep.png}
             \label{fig:dcdcbbpwr}
             \caption{Nominal baseband power resulting from a sweep of DC inputs.}
             \end{center}
@@ -98,7 +94,7 @@
 
     \begin{figure}
         \begin{center}
-        \includegraphics[width=0.8\textwidth]{SQNRnominal}
+        \includegraphics[width=0.8\textwidth]{MASHSQNRsweep0105.png}
         \label{fig:SQNRnominal}
         \caption{SQNR resulting from a sweep of different input amplitudes of a sine wave without mismatch is shown.}
         \end{center}
@@ -110,25 +106,60 @@
         %capacitor mismatch, the effect of
         Capacitor mismatch causes a mismatch in the multiplication stages of the amplifier.
         In the matlab model there are various precise multiplication elements that can be varied.
-        The variation expected in capacitors is 0.4\%, so a variation in these values of 0.4\% must be tested.        
+        The variation expected in capacitors is 0.4\%, so a variation in these values of 0.4\% must be tested.
+        For a design margin, this can be increased to 1\% mismatch on the two gains to modify in the design, shown in figure \ref{fig:MASH}.
+
+        Applying gain mismatch of 1\% in all four possible configurations; the worst observed result is shown in figure \ref{fig:SQNRcap} - swept for all input amplitudes.
+        The worst observed was a combination of 99\% mgain2 and 101\% mgain1.
+        Figure \ref{fig:SQNRcap} shows that the circuit is still able to meet the specification.
  
         \begin{figure}
             \begin{center}
-            \includegraphics[width=0.8\textwidth]{SQNRnominal}
+            \includegraphics[width=0.8\textwidth]{MASHsweepcap.png}
             \label{fig:SQNRcap}
             \caption{SQNR resulting from a sweep of different input amplitudes of a sine wave with capacitor mismatch is shown.}
             \end{center}
-        \end{figure}             
+        \end{figure} 
 
-        \subsubsection{Effect of Transfer Function Mismatch} 
+        \subsubsection{Effect of Noise Leakage} 
         %run SQNR sweeps with mismatches in the transfer function
         %reference equations describing this from the textbook
-        
+        Noise leakage is governed by the mismatch of transfer functions from the fist and second stages of the modulator(\cite{Schreier2004}, p.132).
+        This requires modifying gain components defining the individual stages.
+        With the worst case gains from the previous section set, these two internal gain blocks were modified by 1\% mismatch to find the worst combination.
+        The result is shown in a sweep of all input amplitudes in figure \ref{fig:SQNRtrans}.
+
+        \begin{figure}
+            \begin{center}
+            \includegraphics[width=0.8\textwidth]{MASHsweeptrans.png}
+            \label{fig:SQNRtrans}
+            \caption{SQNR resulting from a sweep of different input amplitudes of a sine wave with transfer function mismatch is shown.}
+            \end{center}
+        \end{figure} 
 
     \subsection{Cadence Tests}
     %test showing that the sizing of switches and caps is ok
+    To show that the sizing of devices in section \ref{Design:components} is correct the modulator should be simulated to show that the input referred noise is as low as expected.
+    Unfortunately, the full modulator was not implemented in Cadence, making this full simulation impossible.
+    To prove that the sizing is adequate a first order modulator noise simulation was performed with the input capacitor and $g_{m}$ sizing calculated applied.
+
+    %notes on resizing to meet specification
+    First order calculations proved to be inaccurate at this point and it was necessary to further increase the size of the input capacitors to meet the noise requirements.
+
+
+    %noise breakdown results showing the noise being within specification
+    
+
+    %estimate the SQNR that would be achieved by adding worst case quantisation noise and worst case thermal noise
+   
+ 
+    %make up a FOM?    
+
 
 \subsection{Conclusion}
 \label{Verification:conclusion}
 %conclusion to the verification section
+Although a full simulation of a macro-model implementation of the modulator has not been completed, the simulation results presented here show that this circuit is capable of meeting the specifications as described.
+Non-ideal effects have been considered in the matlab simulations and noise has been investigated in the Cadence simulations.
+From these results the circuit can be expected to work if completed.
 

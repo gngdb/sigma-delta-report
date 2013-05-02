@@ -1,0 +1,267 @@
+\documentclass[10pt, a4paper, onecolumn, twoside, english]{article}
+%MAY HAVE TO SPECIFY DOUBLE SIDED IF PRINTED IN THAT FORMAT
+%unsure of any specific font size required
+%"font size no smaller than 10pt"
+
+\usepackage{everyshi}
+\usepackage[absolute]{textpos}
+%Phase One or phase one?
+\usepackage{fullpage}
+%at least 1 inch margins
+\usepackage{amsmath}
+%\usepackage{graphicx}
+\usepackage{graphicx}
+
+%\usepackage{lipsum}
+
+%\renewcommand{\includegraphics}[2][]{%
+%    \Huge$\times$% print x where image should be 
+%}
+
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+\usepackage{listings}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage{listings}
+%special tabular environment
+\usepackage{longtable}
+%to set up page numbering
+\usepackage{fancyhdr}
+%to include the mission statement
+\usepackage{pdfpages}
+\usepackage{geometry}
+%for inline whole citations:
+\usepackage{bibentry}
+\nobibliography*
+% scientific notation, 1\e{9} will print as 1x10^9
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\usepackage{amsmath} % needed for pmatrix
+\usepackage{booktabs} % Fancy tables
+%include python package for some sorted lists - not working yet
+%\usepackage{python}
+\usepackage{setspace}
+%solves problem of urls in bibliography
+\usepackage{url}
+%to evaluate text only page count
+\usepackage{comment}
+%for special maths symbols
+\usepackage{amssymb}
+%compact maths font?
+%\usepackage{mathptmx}
+%compact lists
+\usepackage{paralist}
+%activate in case of way way too long
+%\usepackage{savetrees}
+%for checkmarks
+\usepackage{amsfonts}
+%for tables
+\usepackage{pgfplotstable}
+%config for long tables
+% replicate column names on top of every page of a multi-page table:
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{array}
+\usepackage{babel}
+\providecommand{\tabularnewline}{\\}
+
+%\excludecomment{align}
+%format the whole report with one half line spacing
+\onehalfspacing
+
+\lstset{ %
+language=Python,                % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,           % adds a frame around the code
+tabsize=2,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
+% Notes on diagram and graph formatting:
+% monochrome preferred, colour only to be used when it makes an important difference
+% must have a clear explanatory caption: "sufficient to make their purpose understandable without reference to the main text"
+% of course, must be referenced if not my own
+% numbering should be sorted out by LaTeX regardless
+% not formatting but interesting to not that it's important to seek permission before using any diagrams or figures from other works
+
+\graphicspath{{./}, {../AVLSI5/images/}, {../AVLSI5/0p54/images/}, {../schematics/}}
+
+%footer and header formatting
+\fancypagestyle{plain}{%
+\fancyhf{} %
+\fancyhead[RO,RE]{\thepage}%
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\headheight}{20pt}%
+\renewcommand{\footrulewidth}{0.2pt}
+}
+
+%Appendix formatting
+\newcounter{alphasect}
+\def\alphainsection{0}
+
+\let\oldsection=\section
+\def\section{%
+  \ifnum\alphainsection=1%
+    \addtocounter{alphasect}{1}
+  \fi%
+\oldsection}%
+
+\renewcommand\thesection{%
+  \ifnum\alphainsection=1% 
+    \Alph{alphasect}%
+  \else%
+    \arabic{section}%
+  \fi%
+}%
+
+\newenvironment{alphasection}{%
+  \ifnum\alphainsection=1%
+    \errhelp={Let other blocks end at the beginning of the next block.}
+    \errmessage{Nested Alpha section not allowed}
+  \fi%
+  \setcounter{alphasect}{0}
+  \def\alphainsection{1}
+}{%
+  \setcounter{alphasect}{0}
+  \def\alphainsection{0}
+}%
+
+\widowpenalty=500
+
+%\includeonly{Appendices}
+
+\begin{document}
+%   title page first - geometry to place title to do
+%   must be carefully positioned to appear in the window of the blue sheet
+%    \pagestyle{empty}
+    \input{title}
+%empty page here?
+    
+    %set to number figures, tables and equations
+    \numberwithin{equation}{section}
+    \numberwithin{figure}{section}
+    \numberwithin{table}{section}
+
+%prior to main text
+    \setcounter{page}{1}
+    \pagenumbering{roman}
+    \pagestyle{plain}
+
+%   Mission Statement
+    %\includepdf[pages={1,2}]{mission_statement.pdf}
+    
+%   Abstract - do at the end
+%    \include{Abstract}
+
+%   Declaration of originality - to do 
+    %\include{dec_orig}
+
+%   Statement of achievement - couple of paragraphs covering what you achieved during the project
+    %\include{statement_achievement}
+
+%   table of contents    
+    \tableofcontents
+%    \pagebreak
+
+%   list of symbols - try and fill in as equations enter report, THEN REVIEW AFTER
+    %\include{symbol_list}
+    %probably not enough time for this
+
+%   Glossary - see above, REVIEW AFTER - sortable lists possible in latex
+%    \include{Glossary}
+
+%   list of tables
+%    \listoftables
+
+%   list of figures
+%    \listoffigures
+
+%    \pagebreak
+
+%   Main Text here
+%   at the start of the main text
+    \setcounter{page}{1}
+    \pagenumbering{arabic}
+
+%OBLIGATORY SPELL CHECK REMINDER - NEVER REMOVE THIS
+
+%\section{Requirements(from assignment)}
+%\begin{enumerate}
+%   \item ``Quality and clarity of the report. Correctly annotated figures, legible graphs and plots. Structure and flow of material. Presence of index, glossary, abstract and appendices. Quality of English. References to books, papers and technology information.'' - most of these things should come about as I write this - look for easy opportunities to ref books, papers etc
+%%   "Format of the report is the same as for MSc or MEng reports, see Section 7.5.8 in the handbook" - this are the same settings as used for MEng so this is done
+%    \item ``A table comparing the amplifier specifications with the actual performance attained should be included. For every specification:
+%    \begin{enumerate}
+%        \item Worst case
+%        \item Monte-carlo
+%        \item Extracted
+%    \end{enumerate}
+%    Where specifications are NOT met, a discussion should be included of the reasons, impact on ADC performance and required remedial actions.''
+%    \item ``Device sizing. 
+%    \begin{enumerate}   
+%        \item All equations used in choosing device sizes should be included. 
+%        \item Where the actual device dimensions depart from those calculated, a discussion should be included.
+%        \item Sizing of cascode bias generation circuits and choice of cascode voltages must be covered.''
+%    \end{enumerate}
+%    \item ``DC operating point. A table showing the dc operating point of the amplifier (in unity gain feedback) has been studied in the main process corners and that all devices are in saturation (apart from the common-mode feedback devices).'' - should make sure to also include the transistors in the CMFB amps.
+%    \item ``{\bf Worst case} simulations of the amplifier specifications including plots of:
+%    \begin{enumerate}
+%        \item GBW
+%        \item phase margin
+%        \item PSRR
+%        \item Settling
+%        \item Common mode tracking
+%        \item Output swing
+%    \end{enumerate}
+%    A discussion of any corners failing specifications must also be included.''
+%    \item ``Plot of Monte-Carlo simulations of offset, PSRR, gain, GBW, phase, common mode tracking and output swing. A discussion of the effect of mismatch and actions taken to reduce the variation under Monte Carlo should be included'' - one of the only required pieces of explanation?
+%    \item ``A plot showing a screen capture (colour) of your top-level layout overlaid with text showing the main sub-blocks. You should include a discussion of the overall layout strategy and floorplan. Any special steps to ensure noise immunity({\bf Shielding}) and matching({\bf common centroid}).''
+%    \item ``Evidence of succesful verification of complete layout of amplifier. Print-out of LVS and DRC check results.'' - fairly easy, should explain the ERCs quickly.
+%    \item ``Post-layout extracted simulations of all specifications. Discussion of departure of extracted amplifier performance from that of the schematic.'' - Extraction section should cover this, obviously.
+%    \item ``ADC top-level simulations. Simulation of ADC at several input voltages with final MOS amplifier confirming correct code values. Comparison with macro-model performance. Check of worst case conditions on ADC accuracy.'' - This is still pending.
+%    \item ``Added-value. Exploration of alternative circuit topologies, optimisation of power consumption, transistor-level implementation of other ADC blocks, sophisticated simulation techniques, demonstration of 10-bit ADC performance for all codes, corners and Monte-Carlo.'' - gain boosted design results (and problems), ENOB test using coherent sampling run over corners and Monte Carlo. Can then also state a FOM for the ADC, which would be nice.
+%\end{enumerate}
+
+
+%MAIN TEXT GOES HERE
+%intro section
+\include{Introduction}
+%subsections:
+%   Specifications
+%   Cyclic ADC Operation?
+
+\include{Design}
+%subsections:
+
+\include{Verification}
+%subsections:
+
+\include{Conclusion}
+
+%
+%           
+
+%   References
+    \bibliographystyle{vancouver}
+    \bibliography{../../Bibtex/Sigma_Delta}{}
+
+%  Appendices
+%4.11.1. Additional material, e.g. mathematical derivations that may interrupt the flow of your paper's argument should form a separate Appendix section.
+%Do not, however, use appendices to lengthen your article unnecessarily.
+%If the material can be found in another work, cite this work rather than reproduce it. 
+%4.11.2. Authors are encouraged to submit additional material as online supplementary material. This should be uploaded as an additional file during submission. 
+    \begin{alphasection}
+    \include{Appendices}
+    \end{alphasection}
+
+\end{document}
