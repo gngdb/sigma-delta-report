@@ -147,12 +147,9 @@ These tests were also run with non-ideal parameters set within the model to simu
     %notes on resizing to meet specification
     First order calculations proved to be inaccurate at this point and it was necessary to further increase the size of the input capacitors to meet the noise requirements.
     It was also necessary to increase the amplifier input $g_{m}$, output $g_{m}$ was also scaled approximately in anticipation of the effect of higher capacitance on settling requirements - although, settling was not tested.
-    The final values producing the noise results seen below can be seen in table \ref{tab:finalsizing}.
+    The final values producing the noise results seen in Appendix \ref{Appendices:noise} can be seen in table \ref{tab:finalsizing}.
 
     \input{finalsizing}
-
-    %noise breakdown results showing the noise being within specification
-    \input{noise}
 
     %estimate the SQNR that would be achieved by adding worst case quantisation noise and worst case thermal noise
     The final thermal noise power achieved is therefore $10.2\mu V$, this can be combined with the worst case expected SQNR to create an estimate of SNDR for this design.

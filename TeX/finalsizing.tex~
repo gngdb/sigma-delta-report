@@ -6,8 +6,11 @@
     \toprule
     Component  & Value \\
     \midrule
-    
-
+    input $g_{m}$ & $500\mu A/V$ \\
+    output $g_{m}$ & $500\mu A/V$ \\
+    input $R_{ds}$ & $2M\Omega$ \\
+    output $R_{ds}$ & $20k\Omega$ \\
+    $C_{in}$ and $C_{fbk}$ & $8pF$ \\
     \end{tabular}
     \end{center}
 \end{table}
