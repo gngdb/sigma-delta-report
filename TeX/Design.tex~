@@ -1,7 +1,7 @@
 \section{Design}
 \label{Design}
 %section on all the design details
-The specifications for this Sigma-Delta modulator to meet are shown in table \ref{tab:SDspec}.
+The required specifications are shown in table \ref{tab:SDspec}.
 These specifications are a relatively low signal bandwidth and a very high SNDR that is characteristic of an audio band ADC.
 In this section different options are evaluated and chosen from to meet these specifications.
 
@@ -65,16 +65,16 @@ This can be seen in figure \ref{fig:MASHnominal} and can be compared with figure
 \begin{figure}
     \begin{center}
     \includegraphics[width=0.8\textwidth]{MASHnominal.png}
-    \label{fig:MASHnominal}
     \caption{An example of a possible nominal MASH SNDR profile with a sine wave input.}
+    \label{fig:MASHnominal}
     \end{center}
 \end{figure}
 
 \begin{figure}
     \begin{center}
     \includegraphics[width=0.8\textwidth]{cifbnominal.png}
+    \caption{An example of a possible nominal CIFB SNDR profile with a sine wave input.}
     \label{fig:cifbnominal}
-    \caption{An example of a possible nominal MASH SNDR profile with a sine wave input.}
     \end{center}
 \end{figure}
 
@@ -100,8 +100,8 @@ Problems outlined above have been considered in the verification of the design i
     \begin{figure}
         \begin{center}
         \includegraphics[width=0.8\textheight, angle=90]{MASH.png}
-        \label{fig:MASH}
         \caption{Top level functional block diagram of the MASH modulator chosen in this design.}
+        \label{fig:MASH}
         \end{center}
     \end{figure}
 
@@ -113,8 +113,8 @@ Problems outlined above have been considered in the verification of the design i
         \begin{figure}
             \begin{center}
             \includegraphics[width=0.8\textheight, angle=90]{silvaschematic.png}
-            \label{fig:silvaschematic}
             \caption{A differential implementation on the Silva-Steensgaard modulator.}
+            \label{fig:silvaschematic}
             \end{center}
         \end{figure}
 
@@ -126,8 +126,8 @@ Problems outlined above have been considered in the verification of the design i
         \begin{figure}
             \begin{center}
             \includegraphics[width=0.8\textwidth]{multiDAC.png}
-            \label{fig:multiDAC}
             \caption{A multi-bit DAC switched capacitor implementation\cite{Henderson2013a}.}
+            \label{fig:multiDAC}
             \end{center}
         \end{figure}       
 
@@ -141,8 +141,8 @@ Problems outlined above have been considered in the verification of the design i
         \begin{figure}
             \begin{center}
             \includegraphics[width=0.8\textwidth]{diffint.png}
-            \label{fig:diffint}
             \caption{A differential implementation of a first order modulator\cite{Henderson2013a}.}
+            \label{fig:diffint}
             \end{center}
         \end{figure}
 

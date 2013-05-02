@@ -1,6 +1,8 @@
 \section{Verification}
 \label{Verification}
 %section including all the simulation results created
+Verification in matlab involved running many sweep tests of all possible signal amplitudes and DC levels.
+These tests were also run with non-ideal parameters set within the model to simulate a real circuit implementation.
 
     \subsection{DC Stability}
     \label{Verification:DCstab}
@@ -33,11 +35,11 @@
         No dead zones are visible at any zoom level - the dead zones produced are smaller than the resolution of the sweep.
         This suggests it is likely the non-linearity will not affect the design.
 
-        \begin{figure}
+        \begin{figure}[hb]
             \begin{center}
             \includegraphics[width=0.8\textwidth]{dcdcMASH.png}
+            \caption{DC input voltage to DC output voltage for a finite gain of 1000.} 
             \label{fig:dcdc}
-            \caption{DC input voltage to DC output voltage for a finite gain of ...} %FILL IN THE GAIN HERE
             \end{center}
         \end{figure}       
 
@@ -51,8 +53,8 @@
          \begin{figure}
             \begin{center}
             \includegraphics[width=0.8\textwidth]{dcbbpwrsweep.png}
-            \label{fig:dcdcbbpwr}
             \caption{Nominal baseband power resulting from a sweep of DC inputs.}
+            \label{fig:dcdcbbpwr}
             \end{center}
         \end{figure}       
         
@@ -79,7 +81,7 @@
 
     \subsection{SQNR Stability}
     %sweeps of SQNR
-    To verify the performance of a Sigma-Delta modulator it's necessary to verify the resolution of the circuit at many input amplitudes and in cases involving non-ideal components.
+    To verify the performance of a Sigma-Delta modulator it is necessary to verify the resolution of the circuit at many input amplitudes and in cases involving non-ideal components.
     The cases tested here are:
     \begin{itemize}
         \item Capacitor mismatch
@@ -93,8 +95,8 @@
     \begin{figure}
         \begin{center}
         \includegraphics[width=0.8\textwidth]{MASHSQNRsweep0105.png}
-        \label{fig:SQNRnominal}
         \caption{SQNR resulting from a sweep of different input amplitudes of a sine wave without mismatch is shown.}
+        \label{fig:SQNRnominal}
         \end{center}
     \end{figure}  
 
@@ -114,12 +116,13 @@
         \begin{figure}
             \begin{center}
             \includegraphics[width=0.8\textwidth]{MASHsweepcap.png}
-            \label{fig:SQNRcap}
             \caption{SQNR resulting from a sweep of different input amplitudes of a sine wave with capacitor mismatch is shown.}
+            \label{fig:SQNRcap}
             \end{center}
         \end{figure} 
 
         \subsubsection{Effect of Noise Leakage} 
+        \label{Verification:leakage}
         %run SQNR sweeps with mismatches in the transfer function
         %reference equations describing this from the textbook
         Noise leakage is governed by the mismatch of transfer functions from the fist and second stages of the modulator(\cite{Schreier2004}, p.132).
@@ -130,28 +133,28 @@
         \begin{figure}
             \begin{center}
             \includegraphics[width=0.8\textwidth]{MASHsweeptrans.png}
-            \label{fig:SQNRtrans}
             \caption{SQNR resulting from a sweep of different input amplitudes of a sine wave with transfer function mismatch is shown.}
+            \label{fig:SQNRtrans}
             \end{center}
         \end{figure} 
 
     \subsection{Cadence Tests}
     %test showing that the sizing of switches and caps is ok
-    To show that the sizing of devices in section \ref{Design:components} is correct the modulator should be simulated to show that the input referred noise is as low as expected.
+    To show that the sizing of devices in section \ref{Design:components} is correct, the modulator should be simulated to show that the input referred noise is as low as expected.
     Unfortunately, the full modulator was not implemented in Cadence, making this full simulation impossible.
     To prove that the sizing is adequate a first order modulator noise simulation was performed with the input capacitor and $g_{m}$ sizing calculated applied.
 
     %notes on resizing to meet specification
     First order calculations proved to be inaccurate at this point and it was necessary to further increase the size of the input capacitors to meet the noise requirements.
+    It was also necessary to increase the amplifier input $g_{m}$, output $g_{m}$ was also scaled approximately in anticipation of the effect of higher capacitance on settling requirements - although, settling was not tested.
+    The final values producing the noise results seen in Appendix \ref{Appendices:noise} can be seen in table \ref{tab:finalsizing}.
 
-
-    %noise breakdown results showing the noise being within specification
-    
+    \input{finalsizing}
 
     %estimate the SQNR that would be achieved by adding worst case quantisation noise and worst case thermal noise
-   
- 
-    %make up a FOM?    
+    The final thermal noise power achieved is therefore $10.2\mu V$, this can be combined with the worst case expected SQNR to create an estimate of SNDR for this design.
+    Worst case SNDR was observed in section \ref{Verification:leakage} was 116.9dB, this equates to $2.57\mu V$ RMS noise.
+    Combining these in quadrature yields $10.52\mu V$ and an effective SNDR of 104.7dB SNDR.
 
 
 \subsection{Conclusion}

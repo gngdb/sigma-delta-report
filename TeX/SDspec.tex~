@@ -2,7 +2,7 @@
     \begin{center}
     \caption{A summary of the specifications required for this Sigma-Delta ADC.}
     \label{tab:SDspec}
-    \begin{tabular}{c c} 
+    \begin{tabular}{l l} 
         \toprule
         Specification   &   Value  \\
         \midrule

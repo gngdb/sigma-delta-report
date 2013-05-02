@@ -1,4 +1,6 @@
 \begin{itemize}
     \item compile
     \item review and changes cap calculations and all dependent calculations
+    \item fix problem with figure numbering - probably just reset to default
+    \item noise.text editing
 \end{itemize}

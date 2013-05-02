@@ -12,10 +12,12 @@
 \contentsline {section}{\numberline {3}Verification}{12}
 \contentsline {subsection}{\numberline {3.1}DC Stability}{12}
 \contentsline {subsubsection}{\numberline {3.1.1}DC input voltage - DC output voltage}{12}
-\contentsline {subsection}{\numberline {3.2}DC input voltage - baseband power}{12}
+\contentsline {subsection}{\numberline {3.2}DC input voltage - baseband power}{13}
 \contentsline {subsection}{\numberline {3.3}SQNR Stability}{13}
-\contentsline {subsubsection}{\numberline {3.3.1}Capacitor Mismatch}{13}
+\contentsline {subsubsection}{\numberline {3.3.1}Capacitor Mismatch}{14}
 \contentsline {subsubsection}{\numberline {3.3.2}Effect of Noise Leakage}{14}
-\contentsline {subsection}{\numberline {3.4}Cadence Tests}{14}
+\contentsline {subsection}{\numberline {3.4}Cadence Tests}{16}
 \contentsline {subsection}{\numberline {3.5}Conclusion}{16}
 \contentsline {section}{\numberline {4}Conclusion}{17}
+\contentsline {section}{\numberline {A}Appendices}{19}
+\contentsline {subsection}{\numberline {A.1}Noise Results}{19}

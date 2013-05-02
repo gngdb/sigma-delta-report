@@ -1,0 +1,6 @@
+\section{Appendices}
+
+\subsection{Noise Results}
+Below are the detailed noise results for the first order Sigma-Delta modulator simulated:
+
+\input{noise}
