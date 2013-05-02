@@ -95,7 +95,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 % numbering should be sorted out by LaTeX regardless
 % not formatting but interesting to not that it's important to seek permission before using any diagrams or figures from other works
 
-\graphicspath{{./}, {../AVLSI5/images/}, {../AVLSI5/0p54/images/}, {../schematics/}}
+\graphicspath{{./}, {../images/}}
 
 %footer and header formatting
 \fancypagestyle{plain}{%
@@ -149,9 +149,9 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 %empty page here?
     
     %set to number figures, tables and equations
-    \numberwithin{equation}{section}
-    \numberwithin{figure}{section}
-    \numberwithin{table}{section}
+    \numberwithin{equation}{section}{subsection}
+    \numberwithin{figure}{section}{subsection}
+    \numberwithin{table}{section}{subsection}
 
 %prior to main text
     \setcounter{page}{1}

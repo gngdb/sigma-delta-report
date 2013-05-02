@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/dev)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: Design.aux
+A level-1 auxiliary file: Verification.aux
+A level-1 auxiliary file: Conclusion.aux
+The style file: vancouver.bst
+A level-1 auxiliary file: Appendices.aux
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: ../../Bibtex/Sigma_Delta.bib
+Warning--empty author and editor in Henderson2013
+Warning--empty pages in Steensgaard2004
+Warning--empty pages in Schreier2004
+Warning--empty author and editor in Henderson2013a
+You've used 4 entries,
+            3169 wiz_defined-function locations,
+            665 strings with 5053 characters,
+and the built_in function-call counts, 3748 in all, are:
+= -- 422
+> -- 32
+< -- 0
++ -- 16
+- -- 8
+* -- 296
+:= -- 441
+add.period$ -- 10
+call.type$ -- 4
+change.case$ -- 4
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 280
+empty$ -- 383
+format.name$ -- 10
+if$ -- 871
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 30
+newline$ -- 19
+num.names$ -- 4
+pop$ -- 82
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 66
+stack$ -- 0
+substring$ -- 622
+swap$ -- 66
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 20
+width$ -- 5
+write$ -- 40
+(There were 4 warnings)

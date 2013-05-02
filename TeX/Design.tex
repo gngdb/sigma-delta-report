@@ -26,7 +26,7 @@ The capacitor sizes are found by equating the expected quantisation noise for a 
 Where $V_{inRMS}$ is the RMS differential voltage range and $m=4$ for a differential circuit.
 
 %assume linear settling for the g_m
-To find the required g_{m}, linear settling is assumed, and the settling time is dependent on OSR:
+To find the required $g_{m}$, linear settling is assumed, and the settling time is dependent on OSR:
 \begin{align}
     \tau_{settling} = \frac{256\times T_{clk}}{2\times OSR}
 \end{align}
@@ -46,7 +46,7 @@ Therefore, a high OSR is recommended for this design.
 
 \subsection{Modulator Choice}
 %based on the different combinations of bits, order and OSR that could meet the required specification
-Shown in table \ref{tab:modoptions} are the major possible options that are projected based on graphs by Schreier and Temes\cit{textbook} and lecture notes.
+Shown in table \ref{tab:modoptions} are the major possible options that are projected based on graphs by Schreier \& Temes(\cite{Schreier2004}, p.112-113) and lecture notes.
 This list is also limited to the options that are possible using the provided tools.
 
 \input{modoptions}
@@ -74,7 +74,7 @@ This can be seen in figure \ref{fig:MASHnominal} and can be compared with figure
     \begin{center}
     \includegraphics[width=0.8\textwidth]{cifbnominal.png}
     \label{fig:cifbnominal}
-    \caption{An example of a possible nominal MASH SNDR profile with a sine wave input.}
+    \caption{An example of a possible nominal CIFB SNDR profile with a sine wave input.}
     \end{center}
 \end{figure}
 
@@ -99,7 +99,7 @@ Problems outlined above have been considered in the verification of the design i
     %screencap from matlab
     \begin{figure}
         \begin{center}
-        \includegraphics[height=0.8\textheight, angle=90]{MASH.png}
+        \includegraphics[width=0.8\textheight, angle=90]{MASH.png}
         \label{fig:MASH}
         \caption{Top level functional block diagram of the MASH modulator chosen in this design.}
         \end{center}
@@ -112,7 +112,7 @@ Problems outlined above have been considered in the verification of the design i
 
         \begin{figure}
             \begin{center}
-            \includegraphics[height=0.8\textheight, angle=90]{silvaschematic.png}
+            \includegraphics[width=0.8\textheight, angle=90]{silvaschematic.png}
             \label{fig:silvaschematic}
             \caption{A differential implementation on the Silva-Steensgaard modulator.}
             \end{center}

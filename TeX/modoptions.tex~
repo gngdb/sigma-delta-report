@@ -6,7 +6,7 @@
     \begin{center}
     \caption{A table summarising design options evaluated during the design.}
     \label{tab:modoptions}
-    \begin{tabular}{l l l p{0.2\textwidth}}
+    \begin{tabular}{l l l p{0.3\textwidth} p{0.2\textwidth}}
     \toprule
     Architecture  & Order &   OSR     & Peak Nominal Observed SNDR(dB) & Notes \\
     \midrule
@@ -16,8 +16,6 @@
     MASH & 1+1+1 & 128 & 126.9 & Error correcting abilities less effective than 2+1 design. \\
     %Silva-Steensgaard & 2 &  does not meet spec without multi-bit feedback
     %multi-bits go here
-    
-
     \end{tabular}
     \end{center}
 \end{table}
