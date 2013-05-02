@@ -1,0 +1,505 @@
+
+Device           Param    Noise Contribution    % Of Total
+
+/MN3             id       0.000966412           9.80      
+/MN2             id       0.000966401           9.80      
+/MN4             id       0.000845154           7.49      
+/MN5             id       0.000844765           7.49      
+/MP1             id       0.000823675           7.12      
+/MP0             id       0.000823329           7.11      
+/ISAMN/MN0       id       0.000778253           6.35      
+/ISAMP/MN0       id       0.000778244           6.35      
+/MN3             rd       0.000743652           5.80      
+/MN3             rs       0.000743651           5.80      
+/MN2             rs       0.000743649           5.80      
+/MN2             rd       0.000743649           5.80      
+/MN1             id       0.000533437           2.98      
+/MN0             id       0.000532839           2.98      
+/IAMP/R2         rn       0.000388378           1.58      
+/IAMP/R0         rn       0.000386638           1.57      
+/ISAMN/MP0       id       0.000383811           1.55      
+/ISAMP/MP0       id       0.000383806           1.55      
+/MP1             fn       0.000283868           0.85      
+/MP0             fn       0.000283861           0.85      
+/MN4             fn       0.000255274           0.68      
+/MN5             fn       0.000254821           0.68      
+/MN1             fn       3.25312e-05           0.01      
+/MN0             fn       3.24879e-05           0.01      
+/MN3             fn       1.93053e-05           0.00      
+/MN2             fn       1.93048e-05           0.00      
+/ISAMN/MN0       fn       1.06226e-05           0.00      
+/ISAMP/MN0       fn       1.06221e-05           0.00      
+/ISAMN/MP0       fn       1.55864e-06           0.00      
+/ISAMP/MP0       fn       1.55842e-06           0.00      
+/MP0             rd       6.05106e-07           0.00      
+/ISAMN/MP0       rd       5.75993e-07           0.00      
+/MP1             rd       5.14707e-07           0.00      
+/ISAMP/MP0       rd       5.14707e-07           0.00      
+/MN4             rd       3.74963e-07           0.00      
+/MN5             rd       3.7454e-07            0.00      
+/MN0             rd       3.48086e-07           0.00      
+/ISAMP/MN0       rd       3.36926e-07           0.00      
+/MN1             rd       3.04932e-07           0.00      
+/ISAMN/MN0       rd       3.04932e-07           0.00      
+/I12/R0          rn       1.65398e-14           0.00      
+/I12/R1          rn       8.6696e-15            0.00      
+/MP0             rs       2.18036e-19           0.00      
+/MN4             rs       1.36763e-19           0.00      
+/MN0             rs       1.31867e-19           0.00      
+/MN5             rs       1.22171e-19           0.00      
+/MN1             rs       5.7219e-23            0.00      
+/ISAMP/MP0       rs       3.95693e-23           0.00      
+/ISAMP/MN0       rs       2.00993e-23           0.00      
+/ISAMN/MP0       rs       1.14965e-23           0.00      
+/ISAMN/MN0       rs       1.28314e-26           0.00      
+/MP1             rs       2.2302e-27            0.00      
+/IAMP/RODSINP    rn       0                     0.00      
+/IAMP/RODSINP    fn       0                     0.00      
+/IAMP/RNOISEP    rn       0                     0.00      
+/IAMP/RNOISEP    fn       0                     0.00      
+/IAMP/RNOISEN    rn       0                     0.00      
+/IAMP/RNOISEN    fn       0                     0.00      
+/IAMP/RDSINN     rn       0                     0.00      
+/IAMP/RDSINN     fn       0                     0.00      
+/IAMP/R2         fn       0                     0.00      
+/IAMP/R0         fn       0                     0.00      
+/I12/R1          fn       0                     0.00      
+/I12/R0          fn       0                     0.00      
+
+Integrated Noise Summary (in V) Sorted By Noise Contributors
+Total Summarized Noise = 0.0030876
+Total Input Referred Noise = 1.22195e-05
+The above noise summary info is for pnoise data
+
+
+Device           Param    Noise Contribution    % Of Total
+/MN3             id       0.000966412           9.80      
+/MN2             id       0.000966401           9.80      
+/MN4             id       0.000845154           7.49      
+/MN5             id       0.000844765           7.49      
+/MP1             id       0.000823675           7.12      
+/MP0             id       0.000823329           7.11      
+/ISAMN/MN0       id       0.000778253           6.35      
+/ISAMP/MN0       id       0.000778244           6.35      
+/MN3             rd       0.000743652           5.80      
+/MN3             rs       0.000743651           5.80      
+/MN2             rs       0.000743649           5.80      
+/MN2             rd       0.000743649           5.80      
+/MN1             id       0.000533437           2.98      
+/MN0             id       0.000532839           2.98      
+/IAMP/R2         rn       0.000388378           1.58      
+/IAMP/R0         rn       0.000386638           1.57      
+/ISAMN/MP0       id       0.000383811           1.55      
+/ISAMP/MP0       id       0.000383806           1.55      
+/MP1             fn       0.000283868           0.85      
+/MP0             fn       0.000283861           0.85      
+/MN4             fn       0.000255274           0.68      
+/MN5             fn       0.000254821           0.68      
+/MN1             fn       3.25312e-05           0.01      
+/MN0             fn       3.24879e-05           0.01      
+/MN3             fn       1.93053e-05           0.00      
+/MN2             fn       1.93048e-05           0.00      
+/ISAMN/MN0       fn       1.06226e-05           0.00      
+/ISAMP/MN0       fn       1.06221e-05           0.00      
+/ISAMN/MP0       fn       1.55864e-06           0.00      
+/ISAMP/MP0       fn       1.55842e-06           0.00      
+/MP0             rd       6.05106e-07           0.00      
+/ISAMN/MP0       rd       5.75993e-07           0.00      
+/MP1             rd       5.14707e-07           0.00      
+/ISAMP/MP0       rd       5.14707e-07           0.00      
+/MN4             rd       3.74963e-07           0.00      
+/MN5             rd       3.7454e-07            0.00      
+/MN0             rd       3.48086e-07           0.00      
+/ISAMP/MN0       rd       3.36926e-07           0.00      
+/MN1             rd       3.04932e-07           0.00      
+/ISAMN/MN0       rd       3.04932e-07           0.00      
+/I12/R0          rn       1.65398e-14           0.00      
+/I12/R1          rn       8.6696e-15            0.00      
+/MP0             rs       2.18036e-19           0.00      
+/MN4             rs       1.36763e-19           0.00      
+/MN0             rs       1.31867e-19           0.00      
+/MN5             rs       1.22171e-19           0.00      
+/MN1             rs       5.7219e-23            0.00      
+/ISAMP/MP0       rs       3.95693e-23           0.00      
+/ISAMP/MN0       rs       2.00993e-23           0.00      
+/ISAMN/MP0       rs       1.14965e-23           0.00      
+/ISAMN/MN0       rs       1.28314e-26           0.00      
+/MP1             rs       2.2302e-27            0.00      
+/IAMP/RODSINP    rn       0                     0.00      
+/IAMP/RODSINP    fn       0                     0.00      
+/IAMP/RNOISEP    rn       0                     0.00      
+/IAMP/RNOISEP    fn       0                     0.00      
+/IAMP/RNOISEN    rn       0                     0.00      
+/IAMP/RNOISEN    fn       0                     0.00      
+/IAMP/RDSINN     rn       0                     0.00      
+/IAMP/RDSINN     fn       0                     0.00      
+/IAMP/R2         fn       0                     0.00      
+/IAMP/R0         fn       0                     0.00      
+/I12/R1          fn       0                     0.00      
+/I12/R0          fn       0                     0.00      
+
+Integrated Noise Summary (in V) Sorted By Noise Contributors
+Total Summarized Noise = 0.0030876
+Total Input Referred Noise = 1.22195e-05
+The above noise summary info is for pnoise data
+
+
+Device           Param    Noise Contribution    % Of Total
+/MP0             fn       0.0011744             10.75     
+/MP1             fn       0.00116343            10.55     
+/MN4             fn       0.00103414            8.33      
+/MN5             fn       0.0010297             8.26      
+/MN5             id       0.000914124           6.51      
+/MN2             id       0.00083292            5.41      
+/MN3             id       0.000832864           5.41      
+/IAMP/R0         rn       0.000832052           5.39      
+/MP0             id       0.000825532           5.31      
+/MN4             id       0.000778003           4.72      
+/MP1             id       0.000715377           3.99      
+/ISAMP/MN0       id       0.00067113            3.51      
+/ISAMN/MN0       id       0.000671086           3.51      
+/MN0             id       0.000637544           3.17      
+/MN3             rd       0.000553787           2.39      
+/MN3             rs       0.000553784           2.39      
+/MN2             rd       0.000551446           2.37      
+/MN2             rs       0.000551445           2.37      
+/MN1             id       0.000463095           1.67      
+/IAMP/R2         rn       0.000432937           1.46      
+/ISAMP/MP0       id       0.000330997           0.85      
+/ISAMN/MP0       id       0.000330976           0.85      
+/MN2             fn       0.00015409            0.19      
+/MN3             fn       0.000154081           0.18      
+/MN0             fn       0.000142902           0.16      
+/MN1             fn       0.000142491           0.16      
+/ISAMP/MN0       fn       9.63093e-05           0.07      
+/ISAMN/MN0       fn       9.6304e-05            0.07      
+/ISAMP/MP0       fn       1.4227e-05            0.00      
+/ISAMN/MP0       fn       1.42268e-05           0.00      
+/MP0             rd       1.89646e-06           0.00      
+/ISAMN/MP0       rd       1.80567e-06           0.00      
+/MN5             rd       1.25055e-06           0.00      
+/MN4             rd       1.00936e-06           0.00      
+/MN1             rd       9.56384e-07           0.00      
+/ISAMN/MN0       rd       9.56384e-07           0.00      
+/MP1             rd       9.28729e-07           0.00      
+/ISAMP/MP0       rd       9.28729e-07           0.00      
+/MN0             rd       6.27667e-07           0.00      
+/ISAMP/MN0       rd       6.07644e-07           0.00      
+/I12/R1          rn       3.26932e-13           0.00      
+/I12/R0          rn       4.61467e-14           0.00      
+/MP0             rs       5.28303e-19           0.00      
+/MN4             rs       2.54732e-19           0.00      
+/MN5             rs       2.28095e-19           0.00      
+/MN0             rs       1.8607e-19            0.00      
+/MP1             rs       1.42748e-22           0.00      
+/ISAMN/MP0       rs       9.69005e-23           0.00      
+/ISAMP/MP0       rs       7.13742e-23           0.00      
+/ISAMP/MN0       rs       3.61428e-23           0.00      
+/MN1             rs       1.37294e-26           0.00      
+/ISAMN/MN0       rs       1.23343e-26           0.00      
+/IAMP/RODSINP    rn       0                     0.00      
+/IAMP/RODSINP    fn       0                     0.00      
+/IAMP/RNOISEP    rn       0                     0.00      
+/IAMP/RNOISEP    fn       0                     0.00      
+/IAMP/RNOISEN    rn       0                     0.00      
+/IAMP/RNOISEN    fn       0                     0.00      
+/IAMP/RDSINN     rn       0                     0.00      
+/IAMP/RDSINN     fn       0                     0.00      
+/IAMP/R2         fn       0                     0.00      
+/IAMP/R0         fn       0                     0.00      
+/I12/R1          fn       0                     0.00      
+/I12/R0          fn       0                     0.00      
+
+Integrated Noise Summary (in V) Sorted By Noise Contributors
+Total Summarized Noise = 0.00358237
+Total Input Referred Noise = 1.60053e-05
+The above noise summary info is for pnoise data
+
+
+Device           Param    Noise Contribution    % Of Total
+/MN3             id       0.00121809            9.04      
+/MN2             id       0.00121808            9.04      
+/MN3             rd       0.0011612             8.21      
+/MN3             rs       0.0011612             8.21      
+/MN2             rs       0.00116119            8.21      
+/MN2             rd       0.00116119            8.21      
+/MN4             id       0.00105745            6.81      
+/MN5             id       0.00105729            6.81      
+/MP1             id       0.00103107            6.48      
+/MP0             id       0.00103101            6.48      
+/ISAMN/MN0       id       0.000979714           5.85      
+/ISAMP/MN0       id       0.000979708           5.85      
+/MN1             id       0.000664794           2.69      
+/MN0             id       0.000664717           2.69      
+/ISAMN/MP0       id       0.000483163           1.42      
+/ISAMP/MP0       id       0.00048316            1.42      
+/IAMP/R0         rn       0.000458209           1.28      
+/IAMP/R2         rn       0.000458185           1.28      
+/MN4             fn       2.54463e-05           0.00      
+/MN5             fn       2.52973e-05           0.00      
+/MP1             fn       1.63292e-05           0.00      
+/MP0             fn       1.62305e-05           0.00      
+/MN3             fn       1.02779e-05           0.00      
+/MN2             fn       1.02778e-05           0.00      
+/ISAMN/MN0       fn       3.95135e-06           0.00      
+/ISAMP/MN0       fn       3.95132e-06           0.00      
+/MN1             fn       3.2818e-06            0.00      
+/MN0             fn       3.08463e-06           0.00      
+/MP0             rd       8.53443e-07           0.00      
+/ISAMN/MP0       rd       8.12371e-07           0.00      
+/MP1             rd       7.1811e-07            0.00      
+/ISAMP/MP0       rd       7.1811e-07            0.00      
+/ISAMN/MP0       fn       5.76787e-07           0.00      
+/ISAMP/MP0       fn       5.76784e-07           0.00      
+/MN4             rd       5.12524e-07           0.00      
+/MN5             rd       5.12416e-07           0.00      
+/MN0             rd       4.85714e-07           0.00      
+/ISAMP/MN0       rd       4.70127e-07           0.00      
+/MN1             rd       4.30012e-07           0.00      
+/ISAMN/MN0       rd       4.30012e-07           0.00      
+/I12/R0          rn       1.75645e-17           0.00      
+/MP0             rs       2.95162e-19           0.00      
+/MN5             rs       2.07569e-19           0.00      
+/MN4             rs       2.06766e-19           0.00      
+/MN0             rs       1.9225e-19            0.00      
+/ISAMP/MP0       rs       5.52106e-23           0.00      
+/ISAMN/MP0       rs       4.36048e-23           0.00      
+/ISAMN/MN0       rs       4.03474e-23           0.00      
+/ISAMP/MN0       rs       2.32668e-23           0.00      
+/MN1             rs       1.79079e-26           0.00      
+/MP1             rs       2.79372e-27           0.00      
+/IAMP/RODSINP    rn       0                     0.00      
+/IAMP/RODSINP    fn       0                     0.00      
+/IAMP/RNOISEP    rn       0                     0.00      
+/IAMP/RNOISEP    fn       0                     0.00      
+/IAMP/RNOISEN    rn       0                     0.00      
+/IAMP/RNOISEN    fn       0                     0.00      
+/IAMP/RDSINN     rn       0                     0.00      
+/IAMP/RDSINN     fn       0                     0.00      
+/IAMP/R2         fn       0                     0.00      
+/IAMP/R0         fn       0                     0.00      
+/I12/R1          rn       0                     0.00      
+/I12/R1          fn       0                     0.00      
+/I12/R0          fn       0                     0.00      
+
+Integrated Noise Summary (in V) Sorted By Noise Contributors
+Total Summarized Noise = 0.0040516
+Total Input Referred Noise = 1.56703e-05
+The above noise summary info is for pnoise data
+
+
+Device           Param    Noise Contribution    % Of Total
+/MN3             id       0.00121809            9.04      
+/MN2             id       0.00121808            9.04      
+/MN3             rd       0.0011612             8.21      
+/MN3             rs       0.0011612             8.21      
+/MN2             rs       0.00116119            8.21      
+/MN2             rd       0.00116119            8.21      
+/MN4             id       0.00105745            6.81      
+/MN5             id       0.00105729            6.81      
+/MP1             id       0.00103107            6.48      
+/MP0             id       0.00103101            6.48      
+/ISAMN/MN0       id       0.000979714           5.85      
+/ISAMP/MN0       id       0.000979708           5.85      
+/MN1             id       0.000664794           2.69      
+/MN0             id       0.000664717           2.69      
+/ISAMN/MP0       id       0.000483163           1.42      
+/ISAMP/MP0       id       0.00048316            1.42      
+/IAMP/R0         rn       0.000458209           1.28      
+/IAMP/R2         rn       0.000458185           1.28      
+/MN4             fn       2.54463e-05           0.00      
+/MN5             fn       2.52973e-05           0.00      
+/MP1             fn       1.63292e-05           0.00      
+/MP0             fn       1.62305e-05           0.00      
+/MN3             fn       1.02779e-05           0.00      
+/MN2             fn       1.02778e-05           0.00      
+/ISAMN/MN0       fn       3.95135e-06           0.00      
+/ISAMP/MN0       fn       3.95132e-06           0.00      
+/MN1             fn       3.2818e-06            0.00      
+/MN0             fn       3.08463e-06           0.00      
+/MP0             rd       8.53443e-07           0.00      
+/ISAMN/MP0       rd       8.12371e-07           0.00      
+/MP1             rd       7.1811e-07            0.00      
+/ISAMP/MP0       rd       7.1811e-07            0.00      
+/ISAMN/MP0       fn       5.76787e-07           0.00      
+/ISAMP/MP0       fn       5.76784e-07           0.00      
+/MN4             rd       5.12524e-07           0.00      
+/MN5             rd       5.12416e-07           0.00      
+/MN0             rd       4.85714e-07           0.00      
+/ISAMP/MN0       rd       4.70127e-07           0.00      
+/MN1             rd       4.30012e-07           0.00      
+/ISAMN/MN0       rd       4.30012e-07           0.00      
+/I12/R0          rn       1.75645e-17           0.00      
+/MP0             rs       2.95162e-19           0.00      
+/MN5             rs       2.07569e-19           0.00      
+/MN4             rs       2.06766e-19           0.00      
+/MN0             rs       1.9225e-19            0.00      
+/ISAMP/MP0       rs       5.52106e-23           0.00      
+/ISAMN/MP0       rs       4.36048e-23           0.00      
+/ISAMN/MN0       rs       4.03474e-23           0.00      
+/ISAMP/MN0       rs       2.32668e-23           0.00      
+/MN1             rs       1.79079e-26           0.00      
+/MP1             rs       2.79372e-27           0.00      
+/IAMP/RODSINP    rn       0                     0.00      
+/IAMP/RODSINP    fn       0                     0.00      
+/IAMP/RNOISEP    rn       0                     0.00      
+/IAMP/RNOISEP    fn       0                     0.00      
+/IAMP/RNOISEN    rn       0                     0.00      
+/IAMP/RNOISEN    fn       0                     0.00      
+/IAMP/RDSINN     rn       0                     0.00      
+/IAMP/RDSINN     fn       0                     0.00      
+/IAMP/R2         fn       0                     0.00      
+/IAMP/R0         fn       0                     0.00      
+/I12/R1          rn       0                     0.00      
+/I12/R1          fn       0                     0.00      
+/I12/R0          fn       0                     0.00      
+
+Integrated Noise Summary (in V) Sorted By Noise Contributors
+Total Summarized Noise = 0.0040516
+Total Input Referred Noise = 1.56703e-05
+The above noise summary info is for pnoise data
+
+
+Device           Param    Noise Contribution    % Of Total
+/IAMP/R2         rn       0.00756146            29.45     
+/IAMP/R0         rn       0.00571503            16.82     
+/MN4             id       0.00547096            15.42     
+/MN5             id       0.0042974             9.51      
+/MN1             id       0.00412648            8.77      
+/MP1             id       0.00391338            7.89      
+/MN0             id       0.00273125            3.84      
+/MP0             id       0.00262418            3.55      
+/MP0             fn       0.00107932            0.60      
+/MP1             fn       0.00104997            0.57      
+/MN4             fn       0.000976898           0.49      
+/MN5             fn       0.000964789           0.48      
+/MN2             id       0.00083571            0.36      
+/MN3             id       0.000835531           0.36      
+/MN2             rd       0.00082471            0.35      
+/MN2             rs       0.000824439           0.35      
+/MN3             rd       0.000742102           0.28      
+/MN3             rs       0.000741907           0.28      
+/ISAMP/MN0       id       0.0006733             0.23      
+/ISAMN/MN0       id       0.000673156           0.23      
+/ISAMP/MP0       id       0.000332067           0.06      
+/ISAMN/MP0       id       0.000331996           0.06      
+/MN2             fn       0.000155118           0.01      
+/MN3             fn       0.000155084           0.01      
+/MN1             fn       0.000135681           0.01      
+/MN0             fn       0.000134807           0.01      
+/ISAMP/MN0       fn       9.68064e-05           0.00      
+/ISAMN/MN0       fn       9.67835e-05           0.00      
+/MP1             rd       2.20029e-05           0.00      
+/ISAMP/MP0       rd       2.20029e-05           0.00      
+/MP0             rd       2.11154e-05           0.00      
+/MN4             rd       2.0613e-05            0.00      
+/ISAMN/MP0       rd       2.01045e-05           0.00      
+/MN5             rd       1.92992e-05           0.00      
+/MN0             rd       1.48704e-05           0.00      
+/ISAMP/MN0       rd       1.4396e-05            0.00      
+/ISAMP/MP0       fn       1.43376e-05           0.00      
+/ISAMN/MP0       fn       1.43351e-05           0.00      
+/MN1             rd       1.06484e-05           0.00      
+/ISAMN/MN0       rd       1.06484e-05           0.00      
+/I12/R1          rn       1.16828e-13           0.00      
+/I12/R0          rn       7.83018e-14           0.00      
+/MN4             rs       7.45337e-18           0.00      
+/MN5             rs       6.35254e-18           0.00      
+/MP0             rs       5.89843e-18           0.00      
+/MN0             rs       4.42447e-18           0.00      
+/ISAMN/MP0       rs       1.0789e-21            0.00      
+/ISAMN/MN0       rs       9.98853e-22           0.00      
+/ISAMP/MN0       rs       8.56317e-22           0.00      
+/MN1             rs       4.87544e-26           0.00      
+/ISAMP/MP0       rs       1.20008e-26           0.00      
+/MP1             rs       9.35384e-27           0.00      
+/IAMP/RODSINP    rn       0                     0.00      
+/IAMP/RODSINP    fn       0                     0.00      
+/IAMP/RNOISEP    rn       0                     0.00      
+/IAMP/RNOISEP    fn       0                     0.00      
+/IAMP/RNOISEN    rn       0                     0.00      
+/IAMP/RNOISEN    fn       0                     0.00      
+/IAMP/RDSINN     rn       0                     0.00      
+/IAMP/RDSINN     fn       0                     0.00      
+/IAMP/R2         fn       0                     0.00      
+/IAMP/R0         fn       0                     0.00      
+/I12/R1          fn       0                     0.00      
+/I12/R0          fn       0                     0.00      
+
+Integrated Noise Summary (in V) Sorted By Noise Contributors
+Total Summarized Noise = 0.0139344
+Total Input Referred Noise = 0.000138437
+The above noise summary info is for pnoise data
+
+
+Device           Param    Noise Contribution    % Of Total
+/MP1             fn       0.00109039            11.67     
+/MP0             fn       0.00109039            11.67     
+/MN5             fn       0.000967633           9.19      
+/MN4             fn       0.000967632           9.19      
+/MN2             id       0.000794298           6.19      
+/MN3             id       0.000794297           6.19      
+/MN5             id       0.000693841           4.72      
+/MN4             id       0.000693841           4.72      
+/MP1             id       0.000679872           4.54      
+/MP0             id       0.000679869           4.54      
+/ISAMP/MN0       id       0.000640003           4.02      
+/ISAMN/MN0       id       0.000640003           4.02      
+/MN3             rd       0.000524886           2.70      
+/MN3             rs       0.000524886           2.70      
+/MN2             rs       0.000524886           2.70      
+/MN2             rd       0.000524885           2.70      
+/MN1             id       0.000438385           1.89      
+/MN0             id       0.000438382           1.89      
+/ISAMP/MP0       id       0.000315646           0.98      
+/ISAMN/MP0       id       0.000315646           0.98      
+/IAMP/R0         rn       0.000310759           0.95      
+/IAMP/R2         rn       0.000310757           0.95      
+/MN2             fn       0.000143192           0.20      
+/MN3             fn       0.000143175           0.20      
+/MN0             fn       0.000134174           0.18      
+/MN1             fn       0.000134169           0.18      
+/ISAMP/MN0       fn       8.94553e-05           0.08      
+/ISAMN/MN0       fn       8.94512e-05           0.08      
+/ISAMN/MP0       fn       1.32172e-05           0.00      
+/ISAMP/MP0       fn       1.32171e-05           0.00      
+/MP1             rd       4.04961e-07           0.00      
+/ISAMP/MP0       rd       3.85577e-07           0.00      
+/MP0             rd       3.38168e-07           0.00      
+/ISAMN/MP0       rd       3.38168e-07           0.00      
+/MN4             rd       2.3952e-07            0.00      
+/MN5             rd       2.39226e-07           0.00      
+/MN1             rd       2.28542e-07           0.00      
+/ISAMN/MN0       rd       2.21252e-07           0.00      
+/MN0             rd       2.04225e-07           0.00      
+/ISAMP/MN0       rd       2.04225e-07           0.00      
+/I12/R1          rn       7.04327e-13           0.00      
+/I12/R0          rn       2.57454e-14           0.00      
+/MP1             rs       1.1224e-19            0.00      
+/MN4             rs       8.2846e-20            0.00      
+/MN5             rs       8.15679e-20           0.00      
+/MN1             rs       6.73873e-20           0.00      
+/ISAMN/MP0       rs       2.59885e-23           0.00      
+/ISAMP/MP0       rs       2.06917e-23           0.00      
+/MN0             rs       1.91568e-23           0.00      
+/ISAMN/MN0       rs       1.09014e-23           0.00      
+/ISAMP/MN0       rs       1.05909e-26           0.00      
+/MP0             rs       1.84227e-27           0.00      
+/IAMP/RODSINP    rn       0                     0.00      
+/IAMP/RODSINP    fn       0                     0.00      
+/IAMP/RNOISEP    rn       0                     0.00      
+/IAMP/RNOISEP    fn       0                     0.00      
+/IAMP/RNOISEN    rn       0                     0.00      
+/IAMP/RNOISEN    fn       0                     0.00      
+/IAMP/RDSINN     rn       0                     0.00      
+/IAMP/RDSINN     fn       0                     0.00      
+/IAMP/R2         fn       0                     0.00      
+/IAMP/R0         fn       0                     0.00      
+/I12/R1          fn       0                     0.00      
+/I12/R0          fn       0                     0.00      
+
+Integrated Noise Summary (in V) Sorted By Noise Contributors
+Total Summarized Noise = 0.00319233
+Total Input Referred Noise = 1.01957e-05
+The above noise summary info is for pnoise data
+
